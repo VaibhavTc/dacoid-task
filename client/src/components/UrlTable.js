@@ -9,7 +9,6 @@ const UrlTable = ({
   baseUrl = process.env.REACT_APP_BACKEND_URL,
   setSelectedUrlQR,
 }) => {
-  console.log("route", process.env.BACKEND_URL);
   return (
     <div className="overflow-x-auto mb-8">
       <table className="min-w-full bg-white border rounded-lg">

@@ -40,7 +40,7 @@ const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [urlsPerPage] = useState(5);
   const [showQRCode, setShowQRCode] = useState(false);
-  const BASE_URL = process.env.BACKEND_URL;
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL;
   useEffect(() => {
     dispatch(fetchUrls());
   }, [dispatch]);

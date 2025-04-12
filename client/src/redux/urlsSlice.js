@@ -20,7 +20,7 @@ export const fetchUrls = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const res = await axios.get(
-        `{${process.env.REACT_APP_BACKEND_URL}/api/urls}`
+        `${process.env.REACT_APP_BACKEND_URL}/api/urls`
       );
       return res.data;
     } catch (err) {
@@ -29,7 +29,6 @@ export const fetchUrls = createAsyncThunk(
   }
 );
 
-// Create a new URL
 export const createUrl = createAsyncThunk(
   "urls/createUrl",
   async (urlData, { rejectWithValue }) => {

@@ -9,11 +9,8 @@ const QRCodeModal = ({
 }) => {
   // If url is provided directly, use it; otherwise construct from baseUrl and shortId
   const fullUrl = `${baseUrl}/${shortId}`;
-  console.log("fullUrl", fullUrl, process.env.BACKEND_URL);
-
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      {process.env.BACKEND_URL}
       <div className="bg-white p-6 rounded-lg max-w-md w-full">
         <h3 className="text-xl font-bold mb-4">QR Code for /{shortId}</h3>
         <div className="flex justify-center mb-4">

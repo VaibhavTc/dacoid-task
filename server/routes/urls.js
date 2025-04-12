@@ -4,7 +4,6 @@ import { Url } from "../models/Url.js";
 import shortid from "shortid";
 const router = express.Router();
 router.post("/", auth, async (req, res) => {
-  console.log("Create URL route hit", process.env.BACKEND_URL);
   try {
     const { longUrl, customAlias, expiresAt } = req.body;
     const shortId = customAlias || shortid.generate();
