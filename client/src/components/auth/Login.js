@@ -25,7 +25,10 @@ const Login = () => {
     setError(null);
 
     try {
-      const res = await axios.post("/api/auth/login", { email, password });
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/auth/login`,
+        { email, password }
+      );
       dispatch(login(res.data.token));
       window.location.href = "/";
     } catch (err) {

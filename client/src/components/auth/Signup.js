@@ -25,7 +25,10 @@ const Signup = () => {
     setError(null);
 
     try {
-      const res = await axios.post("/api/auth/signup", { email, password });
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/auth/signup`,
+        { email, password }
+      );
       dispatch(login(res.data.token));
       window.location.href = "/";
     } catch (err) {

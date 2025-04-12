@@ -57,7 +57,9 @@ const Dashboard = () => {
   const fetchAnalytics = async (urlId) => {
     setAnalyticsLoading(true);
     try {
-      const res = await axios.get(`/api/analytics/${urlId}`);
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/analytics/${urlId}`
+      );
       setAnalytics(res.data);
     } catch (err) {
       console.error("Error fetching analytics:", err);

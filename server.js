@@ -28,9 +28,9 @@ app.use("/api/urls", urlRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
 app.use("/", redirectRoute);
-app.use(express.static(path.join(__dirname, "./client/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.use(express.static(path.join(__dirname, "./client/build")));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

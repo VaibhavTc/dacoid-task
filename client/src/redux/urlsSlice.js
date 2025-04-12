@@ -19,7 +19,9 @@ export const fetchUrls = createAsyncThunk(
   "urls/fetchUrls",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get("/api/urls");
+      const res = await axios.get(
+        `{${process.env.REACT_APP_BACKEND_URL}/api/urls}`
+      );
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -33,7 +35,10 @@ export const createUrl = createAsyncThunk(
   async (urlData, { rejectWithValue }) => {
     console.log("urlData");
     try {
-      const res = await axios.post("/api/urls", urlData);
+      const res = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/urls`,
+        urlData
+      );
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response.data);
